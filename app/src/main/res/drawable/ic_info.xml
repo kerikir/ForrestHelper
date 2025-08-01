@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Круг (точка "i") -->
+    <path
+        android:fillColor="@color/black"
+        android:pathData="M275.0,172a20,20 0,1 1,-40 0a20,20 0,1 1,40 0z"/>
+
+    <!-- Прямоугольник (основание "i") -->
+    <path
+        android:fillColor="@color/black"
+        android:pathData="M272,344v-128h-48v8h16v120h-16v8h64v-8h-16z"/>
+
+    <!-- Внешний круг (тонкое кольцо) -->
+    <path
+        android:fillColor="@color/black"
+        android:pathData="M256,48A208,208 0,0 0,48 256a208,208 0,0 0,208 208a208,208 0,0 0,208 -208A208,208 0,0 0,256 48z
+                         M256,446.7A190.7,190.7 0,1 1,446.7 256A190.7,190.7 0,0 1,256 446.7z"
+        android:fillType="evenOdd"/>
+</vector>

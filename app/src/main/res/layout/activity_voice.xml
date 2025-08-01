@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".voicecall.VoiceCallActivity">
+
+    <!-- Таймер звонка -->
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"/>
+
+    <!-- Центральный контейнер с информацией -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:padding="24dp">
+
+        <!-- Имя пользователя -->
+        <TextView
+            android:id="@+id/callInfoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"
+            android:text="Иван Иванов"/>
+
+        <!-- IP-адрес -->
+        <TextView
+            android:id="@+id/ipAddressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#CCFFFFFF"
+            android:text="192.168.1.100"/>
+    </LinearLayout>
+
+    <!-- Кнопки управления -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_above="@+id/endCallButton"
+        android:layout_marginBottom="32dp">
+
+        <!-- Кнопка громкой связи -->
+        <ImageButton
+            android:id="@+id/speakerButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_speaker_off"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Громкая связь"
+            android:backgroundTint="@android:color/white"/>
+
+        <!-- Кнопка микрофона -->
+        <ImageButton
+            android:id="@+id/muteButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_mic_on"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Микрофон"
+            android:backgroundTint="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Кнопка завершения -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/endCallButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp"
+        android:src="@drawable/ic_call_end"
+        android:contentDescription="Завершить"
+        app:backgroundTint="@color/red"
+        app:elevation="8dp"
+        app:maxImageSize="32dp"
+        app:tint="@android:color/white"/>
+
+</RelativeLayout>

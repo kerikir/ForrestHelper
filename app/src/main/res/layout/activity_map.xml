@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".yandexmap.MapScreen">
+
+    <!-- Основной контент -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Заголовок по центру -->
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingEnd="60dp"
+                    android:text="@string/map_title"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Карта -->
+        <com.yandex.mapkit.mapview.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar">
+
+            <!-- Ваши существующие элементы управления картой -->
+            <ImageButton
+                android:id="@+id/imageButton_navigation"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginVertical="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/round_corner"
+                android:src="@drawable/navigation_icon"
+                android:paddingRight="4dp"
+                android:paddingTop="4dp"
+                android:onClick="buttonNavigation_click"/>
+
+            <ImageButton
+                android:id="@+id/imageButton_rotate"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@id/imageButton_navigation"
+                android:layout_marginVertical="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/round_corner"
+                android:src="@drawable/rotate_circle"
+                android:onClick="buttonRotate_click"/>
+
+            <ImageButton
+                android:id="@+id/imageButton_plusZoom"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@id/imageButton_rotate"
+                android:layout_marginVertical="200dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/round_corner"
+                android:src="@drawable/plus_zoom_circle"
+                android:onClick="buttonPlusZoom_click"/>
+
+            <ImageButton
+                android:id="@+id/imageButton_minusZoom"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@id/imageButton_plusZoom"
+                android:layout_marginVertical="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/round_corner"
+                android:src="@drawable/minus_zoom_circle"
+                android:onClick="buttonMinusZoom_click"/>
+
+            <TextView
+                android:id="@+id/textView_speed"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="@color/gray_opacity"
+                android:text="0 км/ч"
+                android:textColor="@android:color/black"
+                android:gravity="center"/>
+        </com.yandex.mapkit.mapview.MapView>
+    </RelativeLayout>
+
+    <!-- Боковое меню -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"/>
+</androidx.drawerlayout.widget.DrawerLayout>

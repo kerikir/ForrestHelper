@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".voicecall.IncomingCallActivity">
+
+    <!-- Текст "Входящий вызов" вверху -->
+    <TextView
+        android:id="@+id/callStatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:text="@string/incoming_call"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
+
+    <!-- Центральный контейнер с основной информацией -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:padding="24dp">
+
+        <!-- Имя звонящего -->
+        <TextView
+            android:id="@+id/callerInfoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"
+            android:text="Иван Иванов"/>
+
+        <!-- IP-адрес -->
+        <TextView
+            android:id="@+id/callerIpTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#CCFFFFFF"
+            android:text="192.168.1.100"/>
+    </LinearLayout>
+
+    <!-- Контейнер с кнопками внизу экрана -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp">
+
+        <!-- Кнопка отклонения -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/rejectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:src="@drawable/ic_call_end"
+            android:contentDescription="Отклонить"
+            app:backgroundTint="@color/red"
+            app:elevation="8dp"
+            app:maxImageSize="32dp"
+            app:tint="@android:color/white"/>
+
+        <!-- Кнопка принятия -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/acceptButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_call"
+            android:contentDescription="Принять"
+            app:backgroundTint="@color/green"
+            app:elevation="8dp"
+            app:maxImageSize="32dp"
+            app:tint="@android:color/white"/>
+    </LinearLayout>
+
+</RelativeLayout>
